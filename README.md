@@ -16,7 +16,7 @@
 - 웹 ui -> React
 - 백 엔드 -> Spring Boot
 - Database -> MySQL
-- 중계서버 -> C
+- 중계서버 -> C++
 - CI/CD -> Git Actions
 - 서버 운영 -> ubuntu
 

@@ -11,11 +11,13 @@ public class UserController {
     @Autowired
     public UserService userService;
 
+    //회원가입
     @PostMapping("/signup")
-    public void singUp(@RequestBody User user){
-        userService.createUser(user);
+    public ResponseEntity singUp(@RequestBody User.Info user){
+        return userService.createUser(user);
     }
 
+    //이메일 사용 가능 여부
     @PostMapping("/check-email")
     public ResponseEntity checkEmail(@RequestBody User.UserEmail userEmail){
         return userService.isUsableEmail(userEmail);

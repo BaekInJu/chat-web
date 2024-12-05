@@ -22,10 +22,10 @@ public class UserEntity {
     private String username;
 
     @Column(length = 50, nullable = false)
-    private Long password;
+    private String password;
 
     @Builder
-    public UserEntity(String email, String username, Long password) {
+    public UserEntity(String email, String username, String password) {
         this.email = email;
         this.username = username;
         this.password = password;

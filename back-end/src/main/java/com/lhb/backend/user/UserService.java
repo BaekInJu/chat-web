@@ -12,12 +12,13 @@ public class UserService {
     private UserRepository userRepository;
 
     //사용자 추가 메서드
-    public void createUser(User user) {
+    public ResponseEntity createUser(User.Info user) {
         UserEntity userEntity = UserEntity.builder()
                 .email(user.getEmail())
                 .username(user.getUsername())
                 .password(user.getPassword()).build();
         userRepository.save(userEntity);
+        return new ResponseEntity(HttpStatus.CREATED);
     }
 
     //이미 사용중인 이메일을 확인하는 메서드

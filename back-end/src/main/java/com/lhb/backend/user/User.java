@@ -4,19 +4,17 @@ import lombok.Builder;
 import lombok.Getter;
 import lombok.Setter;
 
-@Getter
-public class User {
-    private String email;
-    private String username;
-    private Long password;
 
-    @Builder
-    public User(String email, String username, Long password) {
-        this.email = email;
-        this.username = username;
-        this.password = password;
+public class User {
+    @Getter
+    @Setter
+    public static class Info {
+        private String email;
+        private String username;
+        private String password;
     }
 
+    //이메일 사용 가능 여부 dto
     @Getter
     @Setter
     public static class UserEmail {

@@ -20,4 +20,12 @@ public class User {
     public static class UserEmail {
         private String email;
     }
+
+    //로그인 요청 dto
+    @Getter
+    @Setter
+    public static class UserLogin {
+        private String email;
+        private String password;
+    }
 }

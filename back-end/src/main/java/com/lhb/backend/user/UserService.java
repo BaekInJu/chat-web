@@ -8,6 +8,7 @@ import org.springframework.stereotype.Service;
 @Service
 public class UserService {
 
+    //레파지토리 자동 객체
     @Autowired
     private UserRepository userRepository;
 
@@ -30,5 +31,17 @@ public class UserService {
             return new ResponseEntity(HttpStatus.NOT_FOUND);
         }
         return new ResponseEntity(HttpStatus.OK);
+    }
+
+    //로그인 (임시로 세션으로)
+    public ResponseEntity login(User.UserLogin userLogin){
+        UserEntity userEntity = userRepository.findByEmail(userLogin.getEmail());
+        if(userEntity == null){
+            return new ResponseEntity(HttpStatus.NOT_FOUND);
+        }
+        if(userEntity.getPassword().equals(userLogin.getPassword())){
+            return new ResponseEntity(HttpStatus.OK);
+        }
+        return new ResponseEntity(HttpStatus.UNAUTHORIZED);
     }
 }

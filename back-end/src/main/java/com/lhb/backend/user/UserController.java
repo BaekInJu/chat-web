@@ -8,6 +8,8 @@ import org.springframework.web.bind.annotation.*;
 @Controller
 @RequestMapping("/user")
 public class UserController {
+
+    //UserService 자동 객체
     @Autowired
     public UserService userService;
 
@@ -21,5 +23,11 @@ public class UserController {
     @PostMapping("/check-email")
     public ResponseEntity checkEmail(@RequestBody User.UserEmail userEmail){
         return userService.isUsableEmail(userEmail);
+    }
+
+    //로그인 요청
+    @PostMapping("/login")
+    public ResponseEntity login(@RequestBody User.UserLogin userLogin){
+        return userService.login(userLogin);
     }
 }

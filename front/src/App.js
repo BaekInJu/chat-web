@@ -7,9 +7,9 @@ import MarketingPage from './marketing-page/MarketingPage';
 function App() {
   return (
     <div className="App">
-      {/* <SignUp /> */}
+      <SignUp />
       {/* <SignIn /> */}
-      <MarketingPage />
+      {/* <MarketingPage /> */}
     </div>
   );
 }
